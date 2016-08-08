@@ -1,7 +1,7 @@
-=== Non-Alphanumeric JS obfuscator ===
+# Non-Alphanumeric JS obfuscator
 This will convert javascript code to nearly un-reversable non-alphanumeric obfuscated code
 
-== TODO: ==
+## TODO:
 * Use escape('"') to get '%' and then use unescape for every missing character
 * Remove switch for local lookup table, instead calculate which mode would be shorter
 * Improve encode.js for better code generation
