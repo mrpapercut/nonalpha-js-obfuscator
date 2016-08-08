@@ -60,9 +60,6 @@ _.a.f = []+[][_.g], // "function Array() { [native code] }"
 _.a.g = []+([]+[])[_.g], // "function String() { [native code] }"
 _.a.h = []+_.b[_.g], // "function Number() { [native code] }"
 
-// Get - and .
-
-
 /**
 Gained characters
 ["(", ")", "{", "}", "A", "E", "g", "m", "N", "p", "R", "S", "v", "x", "y"]
@@ -99,10 +96,17 @@ And let's grab the quotation mark and equal sign as well here with String.link()
 */
 _.j = _.a.a[_.a.b[_.d]+_.a.d[_.c+_.f]+_.a.d[_.c]+((_.d+_.e)*_.f)[_.i](_.e*(_.e+_.f))]() // <a href="undefined">true</a>
 
-/**
-Last but not least: minus and dot (.)
-*/
-_.
+// Lets get 'return' for shorter functions
+_.k = _.a.a[_.c]+_.a.a[_.e]+_.a.a[_.b]+_.a.a[_.d]+_.a.a[_.c]+_.a.d[_.c];
+
+// Get - (dash) and . (dot)
+_.l = []+_.h(_.k+_.a.c[_.e+_.f]+([]+~_.b)[_.b]+_.c+_.j[[]+_.d+(_.d+_.e)]+_.d)();
+
+// escape
+_.m = _.h(_.k+_.a.c[_.e+_.f]+_.a.a[_.e]+_.a.b[_.e]+_.a.c[_.f+_.c]+_.a.b[_.c]+_.a.e[[]+_.c+_.f]+_.a.a[_.e])();
+
+// unescape
+_.n = _.h(_.k+_.a.c[_.e+_.f]+_.a.a[_.d]+_.a.d[_.c]+_.a.a[_.e]+_.a.b[_.e]+_.a.c[_.f+_.c]+_.a.b[_.c]+_.a.e[[]+_.c+_.f]+_.a.a[_.e])();
 
 /*
 So we end up with:
@@ -120,8 +124,19 @@ So we end up with:
 	'>' : _.j[[]+_.c+(_.e*_.e)],
 	'=' : _.j[_.e+_.f],
 	'"' : _.j[_.f+_.f],
-	'/' : _.j[[]+_.e+(_.e+_.f)],
-    '-' : ([]+~_.b)[_.b],
+	'/' : _.j[[]+_.d+(_.d+_.e)],
+    '-' : _.l[_.b],
+    '.' : _.l[_.d],
+    '0' : _.b,
+	'1' : _.c,
+	'2' : _.d,
+	'3' : _.e,
+	'4' : _.f,
+	'5' : _.c+_.f,
+	'6' : _.e+_.e,
+	'7' : _.e+_.f,
+	'8' : _.f+_.f,
+	'9' : _.e*_.e,
 	'A' : _.a.f[_.e*_.e],
 	'E' : _.a.e[_.e*_.f],
 	'N' : _.a.h[_.e*_.e],
@@ -153,19 +168,8 @@ So we end up with:
 	'w' : (_.f*_.f*_.d)[_.i](_.f*_.f*_.d+_.c),
 	'x' : _.a.e[_.e*_.f+_.c],
 	'y' : _.a.f[_.e*_.f+_.c],
-	'z' : ((_.f+_.e)*(_.f+_.c))[_.i](_.e*_.e*_.f),
-	'0' : _.b,
-	'1' : _.c,
-	'2' : _.d,
-	'3' : _.e,
-	'4' : _.f,
-	'5' : _.c+_.f,
-	'6' : _.e+_.e,
-	'7' : _.e+_.f,
-	'8' : _.f+_.f,
-	'9' : _.e*_.e
+	'z' : ((_.f+_.e)*(_.f+_.c))[_.i](_.e*_.e*_.f)
 }
-
 
 /**
 === toString lookup table ===
