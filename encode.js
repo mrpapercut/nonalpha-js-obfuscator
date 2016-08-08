@@ -1,6 +1,7 @@
 'use strict';
 
 const baseCodeStart = '_=+[];_={_:{_:!![]+[],_$:![]+[],$:[]+{},$$:[][_]+[]},_$:_,$_:++_,$$:-~_++,$:-~_,__:-~++_},_.___=_._.$[_.__+_.$_]+_._.$[_.$_]+_._.$$[_.$_]+_._._$[_.$]+_._._[_._$]+_._._[_.$_]+_._.$$[_._$]+_._.$[_.__+_.$_]+_._._[_._$]+_._.$[_.$_]+_._._[_.$_],_.$$$=[][_.___][_.___],_._.___=[]+/[]/[_.___],_._.$__=[]+[][_.___],_._.$_=[]+([]+[])[_.___],_._.$$_=[]+_._$[_.___],_.$__=_._._[_._$]+_._.$[_.$_]+_._.$_[_.$_+_.__+_.__]+_._._[_._$]+_._._[_.$_]+_._.$$[_.$_+_.__]+_._.$$[_.$_]+_._.$_[[]+_.$_+_.__],_.$$_=_._._[_._._$[_.$$]+_._.$$[_.$_+_.__]+_._.$$[_.$_]+((_.$$+_.$)*_.__)[_.$__](_.$*(_.$+_.__))]();';
+const dot = '_._.$_$=([]+_.$$$(_._._[_.$_]+_._._[_.$]+_._._[_._$]+_._._[_.$$]+_._._[_.$_]+_._.$$[_.$_]+_._.$[_.$+_.__]+([]+~_._$)[_._$]+_.$_+_.$$_[[]+_.$$+(_.$$+_.$)]+_.$$)())[_.$$];';
 const functionStart = '_.$$$(';
 const functionEnd = ')()';
 
@@ -17,6 +18,8 @@ const lookupTable = {
 	'=' : '_.$$_[_.$+_.__]',
 	'"' : '_.$$_[_.__+_.__]',
 	'/' : '_.$$_[[]+_.$$+(_.$$+_.$)]',
+    '-' : '([]+~_._$)[_._$]',
+    '.' : '_._.$_$',
 	'A' : '_._.$__[_.$*_.$]',
 	'E' : '_._.___[_.$*_.__]',
 	'N' : '_._.$$_[_.$*_.$]',
@@ -111,11 +114,11 @@ const generateLookupTable = code => {
 
 const encode = code => code.replace(/\s/g, ' ').split('').map(c => lookupTable[c]).join('+');
 
-const obfuscate = code => [baseCodeStart, functionStart, encode(code), functionEnd].join('');
+const obfuscate = code => [baseCodeStart, code.indexOf('.') !== -1 ? dot : null, functionStart, encode(code), functionEnd].join('');
 
 const obfuscateLT = code => {
 	const LT = generateLookupTable(code);
-	return [baseCodeStart, LT.table, functionStart, LT.code, functionEnd].join('');
+	return [baseCodeStart, code.indexOf('.') !== -1 ? dot : null, LT.table, functionStart, LT.code, functionEnd].join('');
 }
 
 console.log(Object.keys(lookupTable));
