@@ -46,10 +46,11 @@ And assign the function to a variable
 ```javascript
 _.h = [][_.g][_.g],
 ```
-Calling `_.h("console.log('obfuscate')")()` will execute the code within. This is similar to using `eval()`
+Calling `_.h("console.log('obfuscate')")()` will result in code behaving like such: `(function(){console.log('obfuscate');})()`. This is similar to how `eval()` works.
+We can also use this method to assign common functions that we cannot approach directly, like `escape()`. By using `_.j = (function() { return escape; })()` we can assign `escape()` to a variable, and then call it like `_.j(' ')`.
 
 ## More characters!
-Because we now have 'constructor', we can get the following strings:
+Because we now have 'constructor', we can also get the following strings:
 ```javascript
 []+/[]/['constructor']
 > "function RegExp() { [native code] }"
@@ -86,7 +87,12 @@ _.a.i = _.a.a[_.a.b[_.d]+_.a.d[_.c+_.f]+_.a.d[_.c]+((_.d+_.e)*_.f)[_.i](_.e*(_.e
 
 The next 3 functions use 'return', so let's build that and assign it:
 ```javascript
-_.a.j = _.a.a[_.c]+_.a.a[_.e]+_.a.a[_.b]+_.a.a[_.d]+_.a.a[_.c]+_.a.d[_.c];
+_.a.j = _.a.a[_.c] // r
+	+_.a.a[_.e]    // e
+	+_.a.a[_.b]    // t
+	+_.a.a[_.d]    // u
+	+_.a.a[_.c]    // r
+	+_.a.d[_.c];   // n
 ```
 
 To grab . (dot) and - (dash), we can do -1/2. The following is basically `(function(){return -1/2})()`
@@ -95,7 +101,7 @@ _.a.k = []+_.h(_.a.j+_.a.c[_.e+_.f]+([]+~_.b)[_.b]+_.c+_.j[[]+_.d+(_.d+_.e)]+_.d
 ```
 
 #### toString, escape and unescape
-To call every other character that isn't covered earlier, we can use 3 functions: `toString`, `escape`, and `unescape`
+To call every other character that isn't covered earlier, we can use 3 functions: `toString` (on a Number), `escape`, and `unescape`
 Because these functions are quite long and not every character is always required, the generator will check if these functions need to be included
 
 First we will build 'toString', so we can use the function `(number)['toString'](radix)`. See bottom for full toString table
@@ -110,7 +116,7 @@ _.i = _.a.a[_.b]         // t
     + _.a.g[[]+_.c+_.f]; // g
 ```
 
-Next up we will assign the `escape()` function. Using `escape(' ')` we can grab '%', which we will need to use `unescape()`
+Next up we will assign the `escape()` function. Using `escape(' ')` we can grab '%', which we will need so we can use `unescape()`
 ```javascript
 _.j = _.h(_.a.j+_.a.c[_.e+_.f]+_.a.a[_.e]+_.a.b[_.e]+_.a.c[_.f+_.c]+_.a.b[_.c]+_.a.e[[]+_.c+_.f]+_.a.a[_.e])();
 ```
