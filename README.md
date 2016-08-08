@@ -183,7 +183,8 @@ And with all these functions assigned, we can create any string:
 
 ## toString lookup table
 Using the function `(a,b)=>((a)['toString'](b))`
-```{
+```
+{
 	"1" : [1, 2],
 	"2" : [2, 3],
 	"3" : [3, 4],
