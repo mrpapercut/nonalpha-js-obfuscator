@@ -6,4 +6,5 @@ This will convert javascript code to nearly un-reversable non-alphanumeric obfus
 * Remove switch for local lookup table, instead calculate which mode would be shorter
 * Improve encode.js for better code generation
 * Write tests
+* Minify obfuscator code automatically instead of manually
 * Turn into nodejs module
