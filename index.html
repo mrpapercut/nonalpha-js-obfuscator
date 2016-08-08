@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<title>Non-Alphanumeric JavaScript Obfuscator</title>
+<style>
+body {
+	background: #ccc;
+}
+div, label, button {
+	font-family: monospace;
+	margin: 1em auto;
+	background: #efefef;
+	display: block;
+	width: 40%;
+	padding: .5em;
+}
+textarea {
+	width: calc(100% - 1em);
+	min-height: 200px;
+	clear: both;
+	border: 1px solid #000;
+	word-break: break-all;
+}
+button {
+	cursor: pointer;
+	border: none;
+	height: 2em;
+	width: 140px;
+}
+</style>
+</head>
+<body>
+<textarea id="input">console["log"]("obfuscation is awesome")</textarea>
+<button id="button" type="button">Obfuscate</button>
+<label for="LT"><input type="checkbox" id="LT">Use local lookup table (reduces length for longer strings)</label>
+<textarea id="output"></textarea>
+<script src="encode.js" async></script>
+<script>
+window.addEventListener('load', () => {
+	const button = document.getElementById('button'),
+		input = document.getElementById('input'),
+		output = document.getElementById('output');
+
+	button.addEventListener('click', () => {
+		const LT = document.getElementById('LT').checked;
+		output.value = LT ? obfuscateLT(input.value) : obfuscate(input.value);
+	});
+});
+</script>
+</body>
+</html>
