@@ -75,8 +75,8 @@ _.a.h = []+_.b[_.g],     // "function Number() { [native code] }"
 Gained characters:
 ( ) { } A E g m N p R S v x y
 
-Total available characters without using 'toString'
-(space) ( ) { } [ ] , A E N O R S a b c d e f g i j l m n o p r s t u v x y
+Total available characters:
+(space) ( ) { } [ ] A E N O R S a b c d e f g i j l m n o p r s t u v x y
 
 ## Even more characters!
 Now let's use `'true'['link']()`, which returns `<a href="undefined">true</a>`, to grab < > = " and /
@@ -96,7 +96,7 @@ _.a.k = []+_.h(_.a.j+_.a.c[_.e+_.f]+([]+~_.b)[_.b]+_.c+_.j[[]+_.d+(_.d+_.e)]+_.d
 
 #### toString, escape and unescape
 To call every other character that isn't covered earlier, we can use 3 functions: `toString`, `escape`, and `unescape`
-Because these functions are quite long and not every character should always be available, the generator will check if these functions need to be included
+Because these functions are quite long and not every character is always required, the generator will check if these functions need to be included
 
 First we will build 'toString', so we can use the function `(number)['toString'](radix)`. See bottom for full toString table
 ```javascript
@@ -117,7 +117,7 @@ _.j = _.h(_.a.j+_.a.c[_.e+_.f]+_.a.a[_.e]+_.a.b[_.e]+_.a.c[_.f+_.c]+_.a.b[_.c]+_
 
 With `unescape('%xx')` we can create every character that we were missing, so we assign that too
 ```javascript
-_.h = _.h(_.a.j+_.a.c[_.e+_.f]+_.a.a[_.d]+_.a.d[_.c]+_.a.a[_.e]+_.a.b[_.e]+_.a.c[_.f+_.c]+_.a.b[_.c]+_.a.e[[]+_.c+_.f]+_.a.a[_.e])();
+_.k = _.h(_.a.j+_.a.c[_.e+_.f]+_.a.a[_.d]+_.a.d[_.c]+_.a.a[_.e]+_.a.b[_.e]+_.a.c[_.f+_.c]+_.a.b[_.c]+_.a.e[[]+_.c+_.f]+_.a.a[_.e])();
 ```
 
 And with all these functions assigned, we can create any string:
