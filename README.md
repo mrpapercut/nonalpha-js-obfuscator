@@ -104,11 +104,8 @@ To grab . (dot) and - (dash), we can do -1/2. The following is basically `(funct
 _.a.k = []+_.g(_.a.j+_.a.c[_.e+_.f]+([]+~_.b)[_.b]+_.c+_.a.i[[]+_.d+(_.d+_.e)]+_.d)(),
 ```
 
-#### toString, escape and unescape
-To call every other character that isn't covered earlier, we can use 3 functions: `toString` (on a Number), `escape`, and `unescape`
-Because these functions are quite long and not every character is always required, the generator will check if these functions need to be included
-
-Next up we will assign the `escape()` function. Using `escape(' ')` we can grab '%', which we will need so we can use `unescape()`
+#### escape and unescape
+To call every other character that isn't covered earlier, we can use the functions `escape`, and `unescape`. We will assign the `escape()` function first, so we can use `escape(' ')` to grab '%', which we will need so we can use `unescape()`
 ```javascript
 _.h = _.g(_.a.j+_.a.c[_.e+_.f]+_.a.a[_.e]+_.a.b[_.e]+_.a.c[_.f+_.c]+_.a.b[_.c]+_.a.f[[]+_.c+_.f]+_.a.a[_.e])(),
 ```
