@@ -27,10 +27,14 @@ button {
 	height: 2em;
 	width: 140px;
 }
+#warning:empty {
+    display: none;
+}
 </style>
 </head>
 <body>
 <div id="instructions">Allowed characters:<br>0 1 2 3 4 5 6 7 8 9 ( ) { } [ ] < > = " / - . E O R S a b c d e f g h i j k l m n o p q r s t u v w x y z [space]</div>
+<div id="warning"></div>
 <textarea id="input">console.log("obfuscation is awesome")</textarea>
 <button id="button" type="button">Obfuscate</button>
 <textarea id="output"></textarea>
@@ -39,7 +43,16 @@ button {
 window.addEventListener('load', () => {
 	const button = document.getElementById('button'),
 		input = document.getElementById('input'),
-		output = document.getElementById('output');
+		output = document.getElementById('output'),
+        warning = document.getElementById('warning');
+
+    var allowedChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", " ", "(", ")", "{", "}", "[", "]", "<", ">", "=", "\"", "/", "-", ".", "E", "O", "R", "S", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    input.addEventListener('keyup', e => {
+        if (e.key.length === 1 && allowedChars.indexOf(e.key) === -1) {
+            warning.innerHTML = 'invalid key: ' + e.key;
+        }
+    });
 
 	button.addEventListener('click', () => {
 		output.value = obfuscateLT(input.value);
