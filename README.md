@@ -1,5 +1,5 @@
 # Non-Alphanumeric JS obfuscator
-This will convert javascript code to nearly un-reversable non-alphanumeric obfuscated code
+This will convert javascript code to nearly irreversable non-alphanumeric obfuscated code
 
 ## Starting code
 ```javascript
