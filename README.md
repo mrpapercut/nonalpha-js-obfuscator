@@ -1,5 +1,5 @@
 # Non-Alphanumeric JS obfuscator
-This will convert javascript code to nearly irreversable non-alphanumeric obfuscated code
+This will convert javascript code to nearly irreversable non-alphanumeric obfuscated code, using only the following characters: `_ - , ; : ! . ( ) [ ] { } * / + = ~ $`. Similar to (JSFuck)[http://www.jsfuck.com/] but much more convoluted.
 
 ## Starting code
 ```javascript
