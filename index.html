@@ -30,10 +30,9 @@ button {
 </style>
 </head>
 <body>
-<div id="instructions">Allowed characters:<br>0 1 2 3 4 5 6 7 8 9 ( ) { } [ ] < > " =  / - . A E N O R S a b c d e f g h i j k l m n o p q r s t u v w x y z [space]</div>
+<div id="instructions">Allowed characters:<br>0 1 2 3 4 5 6 7 8 9 ( ) { } [ ] < > = " / - . E O R S a b c d e f g h i j k l m n o p q r s t u v w x y z [space]</div>
 <textarea id="input">console.log("obfuscation is awesome")</textarea>
 <button id="button" type="button">Obfuscate</button>
-<label for="LT"><input type="checkbox" id="LT">Generate local lookup table (reduces length for longer strings)</label>
 <textarea id="output"></textarea>
 <script src="encode.js" async></script>
 <script>
@@ -43,8 +42,7 @@ window.addEventListener('load', () => {
 		output = document.getElementById('output');
 
 	button.addEventListener('click', () => {
-		const LT = document.getElementById('LT').checked;
-		output.value = LT ? obfuscateLT(input.value) : obfuscate(input.value);
+		output.value = obfuscateLT(input.value);
 	});
 });
 </script>
