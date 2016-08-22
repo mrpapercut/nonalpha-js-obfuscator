@@ -28,7 +28,7 @@ Available: (space) [ ] a b c d e f i j l n o O r s t u
 Missing: g h k m p q v w x y z
 
 ## Callable function
-In Javascript, you can call the constructor of any variable to get the fundemental object, such as Array, String or Number. And the constructor of any fundemental object returns a the object `Function`. This gives us the possibility to use strings as code, like `Function('javascript code')()`. So, if we can create the word 'constructor' out of our variables, we can make `[]['constructor']['constructor']('javascript code')()`. Luckily, the strings 'true', 'false', '[object Object]' and 'undefined' contain all the letters we need.
+In Javascript, you can call the constructor of any variable to get the fundemental object, such as Array, String or Number. And the constructor of any fundemental object returns the object `Function`. This gives us the possibility to use strings as code, like `Function('javascript code')()`. So, if we can create the word 'constructor' out of our variables, we can make `[]['constructor']['constructor']('javascript code')()`. Luckily, the strings 'true', 'false', '[object Object]' and 'undefined' contain all the letters we need.
 ```javascript
 _.a.e = _.a.c[_.f+_.c] // c
     + _.a.c[_.c]       // o
