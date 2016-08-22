@@ -47,7 +47,7 @@ And assign the function to a variable
 _.g = [][_.a.e][_.a.e],
 ```
 Calling `_.g("console.log('obfuscate')")()` will result in code behaving like such: `(function(){console.log('obfuscate');})()`. This is similar to how `eval()` works.
-We can also use this method to assign common functions that we cannot approach directly, like `escape()`. By using `_.j = (function() { return escape; })()` we can assign `escape()` to a variable, and then call it like `_.j(' ')`.
+We can also use this method to assign [global functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects#Function_properties)—functions which are called globally rather than on an object—that we cannot approach directly, like `escape()`. By using `_.j = (function() { return escape; })()` we can assign `escape()` to a variable, and then call it like `_.j(' ')`.
 
 ## More characters!
 Because we now have 'constructor', we can also get the following strings:
